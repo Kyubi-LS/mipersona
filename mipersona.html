@@ -1,21 +1,21 @@
 <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-<a-scene>
-  <a-assets timeout="30000">
-    <a-asset-item id="spinosaurus" src="Waving.fbx"></a-asset-item>
-  </a-assets>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene xr-mode-ui="XRMode: xr;">
+      <a-entity light="type: ambient; intensity: 1"></a-entity>
+      <a-entity light="type: directional; intensity: 0.8" position="1 1 0"></a-entity>
 
-  <a-camera position="0 1.2 0"></a-camera>
+      <a-plane rotation="-90 0 0" width="4" height="4" color="#999"></a-plane>
 
-  <!-- 2D environment omitted for simplicity -->
 
-  <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
-    <a-entity position="0 2.15 0" rotation="0 55 0"
-              gltf-model="#spinosaurus"
-              animation-mixer
-              shadow="cast: true; receive: false"></a-entity>
-  </a-entity>
-
-  <a-scene xr-mode-ui="XRMode: xr;">
-  <!-- Lights configuration omitted for simplicity -->
-</a-scene>
+<a-entity
+  gltf-model="url(me.glb)"
+  rotation="0 0 0"   
+  scale="1 1 1"
+  animation-mixer="clip: *; loop: repeat"
+></a-entity>
+      <a-entity camera look-controls position="0 1.6 3"></a-entity>
+    </a-scene>
+  </body>
+</html>
